@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalConstants } from 'src/global-constants';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'HCIProject';
+  cartCount = GlobalConstants.count;
+  constructor() {
+
+  }
 }
