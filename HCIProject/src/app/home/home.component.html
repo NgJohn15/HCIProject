@@ -15,43 +15,37 @@
     <mat-menu #electronics="matMenu">
     <button mat-menu-item>Item 1</button>
     <button mat-menu-item>Item 2</button>
-</mat-menu>
+    </mat-menu>
 
 <button mat-button [matMenuTriggerFor]="clothes">View</button>
     <mat-menu #clothes="matMenu">
     <button mat-menu-item>Item 1</button>
     <button mat-menu-item>Item 2</button>
-</mat-menu>
+    </mat-menu>
 
 <button mat-button [matMenuTriggerFor]="books">Books</button>
     <mat-menu #books="matMenu">
     <button mat-menu-item>Item 1</button>
     <button mat-menu-item>Item 2</button>
-</mat-menu>
+    </mat-menu>
 </mat-toolbar>
 
 <!-- Tiles with items -->
-<ul *ngFor="let item of items.values()">
-    <mat-card-header>
-        <mat-card-title>{{ item.name }}</mat-card-title>
-    </mat-card-header>
-</ul>
-<mat-card class="example-card">
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Shiba Inu</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-        <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-    </mat-card-actions>
-</mat-card>
+<div class="grid">
+    <ul class="item-card" *ngFor="let item of items.values()">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ item.name }}</mat-card-title>
+                <mat-card-subtitle>
+                    {{ item.dept }}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                {{ item.description }}
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button>Add to Cart</button>
+            </mat-card-actions>
+        </mat-card>
+    </ul>
+</div>
