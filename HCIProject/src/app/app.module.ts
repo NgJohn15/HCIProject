@@ -15,11 +15,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
+import { SportsComponent } from './sports/sports.component';
+import { ElectronicsComponent } from './electronics/electronics.component';
+import { ClothesComponent } from './clothes/clothes.component';
+import { BooksComponent } from './books/books.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    SportsComponent,
+    ElectronicsComponent,
+    ClothesComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +42,10 @@ import { HomeComponent } from './home/home.component';
     MatIconModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
-      { path: 'cart', component:  CartComponent}
+      { path: 'sports', component:  SportsComponent},
+      { path: 'electronics', component:  ElectronicsComponent},
+      { path: 'clothes', component:  ClothesComponent},
+      { path: 'books', component: BooksComponent}
     ])
   ],
   providers: [],

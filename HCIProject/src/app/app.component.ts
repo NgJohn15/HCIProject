@@ -10,6 +10,5 @@ export class AppComponent {
   title = 'HCIProject';
   cartCount = GlobalConstants.count;
   constructor() {
-
   }
 }
