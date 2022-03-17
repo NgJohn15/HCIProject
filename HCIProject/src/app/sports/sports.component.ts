@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalConstants } from 'src/global-constants';
 
 @Component({
   selector: 'app-sports',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sports.component.css']
 })
 export class SportsComponent implements OnInit {
+
+  items = GlobalConstants.items;
 
   constructor() { }
 
