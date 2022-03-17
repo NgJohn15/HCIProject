@@ -42,6 +42,7 @@ import { BooksComponent } from './books/books.component';
     MatIconModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
+      { path: 'cart', component: CartComponent},
       { path: 'sports', component:  SportsComponent},
       { path: 'electronics', component:  ElectronicsComponent},
       { path: 'clothes', component:  ClothesComponent},
