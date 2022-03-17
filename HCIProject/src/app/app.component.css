@@ -1,0 +1,12 @@
+.spacer {
+    justify-content: space-between;
+    flex: 1;
+}
+
+.toolbar {
+    justify-content: space-around;
+}
+
+.header {
+    flex: 1 1 auto;
+}
