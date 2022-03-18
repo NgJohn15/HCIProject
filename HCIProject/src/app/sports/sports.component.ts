@@ -9,10 +9,16 @@ import { GlobalConstants } from 'src/global-constants';
 export class SportsComponent implements OnInit {
 
   items = GlobalConstants.items;
+  sports = new Map();
 
   constructor() { }
 
   ngOnInit(): void {
+    for (let entry of this.items.entries()) {
+      if (entry[1].dept == "sports") {
+        this.sports.set(entry[0], entry[1]);
+      }
+    }
   }
 
 }

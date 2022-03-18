@@ -17,6 +17,7 @@ export class GlobalConstants {
         [ "jacket", {name: "jacket", dept: "clothes", description: "Warm comfy uni-sex jacket."}],
         [ "men_tshirt", {name: "5-Pack Men's Plain White Tee", dept: "clothes", description: "5 pack of comfortable white tee for mens. Comes in S, M, L, XL, and XXL."}],
         [ "women_dress", {name: "Doko Womens Spring Summer Deep V Dress", dept: "clothes", description: "The ruffled dress is chic and graceful.Ruffles, ruffles, ruffles! Showcasing a floral print on a mauve base lightweight fabrication. Designed with a ruffle tiered draped neckline and long balloon sleeves."}],
-        [ "mens_shoe", {name: "Screechers Men's Superior Gains Loafer", dept: "clothes", description: "Screechers is an award-winning global leader in the lifestyle footwear industry that designs, develops, and markets lifestyle footwear that appeals to trend-savvy men, women and children. The company's success stems from it's high quality, diversified, and affordable product line that meets consumers' various lifestyle needs."}]
+        [ "mens_shoe", {name: "Screechers Men's Superior Gains Loafer", dept: "clothes", description: "Screechers is an award-winning global leader in the lifestyle footwear industry that designs, develops, and markets lifestyle footwear that appeals to trend-savvy men, women and children. The company's success stems from it's high quality, diversified, and affordable product line that meets consumers' various lifestyle needs."}],
+        [ "story_book", {name: "Children's Story Book", dept: "books", description: "A children picture book."}]
     ]);
 }
