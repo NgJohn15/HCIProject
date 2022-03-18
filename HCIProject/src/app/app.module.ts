@@ -19,6 +19,7 @@ import { SportsComponent } from './sports/sports.component';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
+import { ExportToCSV } from "@molteni/export-csv"; 
 
 @NgModule({
   declarations: [

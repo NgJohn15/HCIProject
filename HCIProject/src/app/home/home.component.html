@@ -1,4 +1,22 @@
-<!-- Tiles with items -->
+<span>
+    <button mat-raised-button (click)="startTest1()">
+        Begin Test 1
+    </button>
+    <button mat-raised-button (click)="startTest2()">
+        Begin Test 2
+    </button>
+    <button mat-raised-button (click)="startTest3()">
+        Begin Test 3
+    </button>
+    <button mat-raised-button (click)="startTest4()">
+        Begin Test 4
+    </button>
+    <button mat-raised-button (click)="getResults()">
+        Get Results
+    </button>
+</span>
+
+
 <div class="grid">
     <ul class="item-card" *ngFor="let item of items.values()">
         <mat-card>

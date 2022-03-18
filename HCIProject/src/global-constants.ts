@@ -1,5 +1,22 @@
 export class GlobalConstants {
     public static count: number = 0;
+
+    public static test1_start: Date;
+    public static test2_start: Date;
+    public static test3_start: Date;
+    public static test4_start: Date;
+
+    public static test1_end: Date;
+    public static test2_end: Date;
+    public static test3_end: Date;
+    public static test4_end: Date;
+
+    public static test1_misclicks: number;
+    public static test2_misclicks: number;
+    public static test3_misclicks: number;
+    public static test4_misclicks: number;
+
+
     public static items = new Map([
         [ "soccer_ball", {name: "Soccer Ball", dept: "sports", description: "Standard regulation sized soccer ball for adults."}],
         [ "foot_ball", {name: "Football", dept: "sports", description: "Standard leather regulation sized football for adults."}],
@@ -18,6 +35,20 @@ export class GlobalConstants {
         [ "men_tshirt", {name: "5-Pack Men's Plain White Tee", dept: "clothes", description: "5 pack of comfortable white tee for mens. Comes in S, M, L, XL, and XXL."}],
         [ "women_dress", {name: "Doko Womens Spring Summer Deep V Dress", dept: "clothes", description: "The ruffled dress is chic and graceful.Ruffles, ruffles, ruffles! Showcasing a floral print on a mauve base lightweight fabrication. Designed with a ruffle tiered draped neckline and long balloon sleeves."}],
         [ "mens_shoe", {name: "Screechers Men's Superior Gains Loafer", dept: "clothes", description: "Screechers is an award-winning global leader in the lifestyle footwear industry that designs, develops, and markets lifestyle footwear that appeals to trend-savvy men, women and children. The company's success stems from it's high quality, diversified, and affordable product line that meets consumers' various lifestyle needs."}],
-        [ "story_book", {name: "Children's Story Book", dept: "books", description: "A children picture book."}]
+        [ "story_book", {name: "Children's Story Book", dept: "books", description: "A children picture book."}],
+        [ "math_textbook", {name: "Introduction to Mathematics", dept: "books", description: ""}],
+        [ "us_history_textbook", {name: "Introduction to US History", dept: "books", description: ""}],
+        [ "world_history_textbook", {name: "Introduction to World History", dept: "books", description: ""}],
+        [ "italian_textbook", {name: "Introduction to Italian", dept: "books", description: ""}],
+        [ "english_textbook", {name: "Introduction to English", dept: "books", description: ""}],
+        [ "spanish_textbook", {name: "Introduction to Spanish", dept: "books", description: ""}],
+        [ "german_textbook", {name: "Introduction to Spanish", dept: "books", description: ""}],
+        [ "french_textbook", {name: "Introduction to French", dept: "books", description: ""}],
+        [ "chinese_textbook", {name: "Introduction to Chinese", dept: "books", description: ""}],
+        [ "dutch_textbook", {name: "Introduction to Dutch", dept: "books", description: ""}],
+        [ "turkish_textbook", {name: "Introduction to Turkish", dept: "books", description: ""}],
+        [ "mens_socks", {name: "10 Pack of Cotton Socks for Men", dept: "clothes", description: ""}]
     ]);
+
+    public static cart_items = [];
 }
