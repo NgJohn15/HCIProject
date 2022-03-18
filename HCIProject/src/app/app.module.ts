@@ -26,7 +26,8 @@ import { BooksComponent } from './books/books.component';
     HomeComponent,
     SportsComponent,
     ElectronicsComponent,
-    ClothesComponent
+    ClothesComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,

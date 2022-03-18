@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { fadeInItems } from '@angular/material/menu';
+import { GlobalConstants } from 'src/global-constants';
 
 @Component({
   selector: 'app-books',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BooksComponent implements OnInit {
 
+  items = GlobalConstants.items;
+  books = new Map();
+
   constructor() { }
 
   ngOnInit(): void {
+    for (let item of this.items.entries()) {
+      if (item[1].dept == "books") {
+        this.books.set(item[0], item[1]);
+      }
+    }
   }
-
 }
