@@ -93,7 +93,19 @@ export class HomeComponent implements OnInit {
         start: GlobalConstants.test2_start,
         end: GlobalConstants.test2_end,
         duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime()
-      }
+      },
+      {
+        testnum: 3,
+        start: GlobalConstants.test3_start,
+        end: GlobalConstants.test3_end,
+        duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime()
+      },
+      // {
+      //   testnum: 4,
+      //   start: GlobalConstants.test4_start,
+      //   end: GlobalConstants.test4_end,
+      //   duration: GlobalConstants.test4_end.getTime() - GlobalConstants.test3_start.getTime()
+      // }
     ];
 
     new ngxCsv(data, "data", options)

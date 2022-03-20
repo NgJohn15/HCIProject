@@ -34,6 +34,7 @@ export class SportsComponent implements OnInit {
       let dateTime = new Date();
       GlobalConstants.test1_end = dateTime;
       GlobalConstants.test1_active = false;
+      GlobalConstants.test1_fin = true;
     }
   }
 

@@ -28,6 +28,7 @@ export class CartComponent implements OnInit {
       console.log("Completed Test 2");
       GlobalConstants.test2_active = false;
       GlobalConstants.test2_end = dateTime;
+      GlobalConstants.test2_fin = true;
     }
   }
 }
