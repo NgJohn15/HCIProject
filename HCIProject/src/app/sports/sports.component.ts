@@ -9,13 +9,12 @@ import { GlobalConstants } from 'src/global-constants';
 export class SportsComponent implements OnInit {
 
   cart = GlobalConstants.cart_items;
-  items = GlobalConstants.items;
   sports = new Map();
 
   constructor() { }
 
   ngOnInit(): void {
-    for (let entry of this.items.entries()) {
+    for (let entry of GlobalConstants.items.entries()) {
       if (entry[1].dept == "sports") {
         this.sports.set(entry[0], entry[1]);
       }
@@ -23,10 +22,20 @@ export class SportsComponent implements OnInit {
   }
 
   addItem(itemName: any) {
-    console.log("added" + itemName.name);
+    console.log("added " + itemName.name);
 
     // add item to shopping list
     this.cart.push(itemName);
+
+    // test 1 complete condition
+    if (GlobalConstants.test1_active && itemName.name == "Volleyball")
+    {
+      console.log("TEST 1 Complete");
+      let dateTime = new Date();
+      GlobalConstants.test1_end = dateTime;
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test1_fin = true;
+    }
   }
 
 }
