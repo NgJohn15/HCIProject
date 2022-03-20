@@ -34,6 +34,17 @@ export class HomeComponent implements OnInit {
   startTest2() {
     let dateTime = new Date()
     console.log("Begining Test 2 " + dateTime);
+
+    // add volleyball item to cart if one doesn't already exist
+    let temp = true;
+    for (let item of GlobalConstants.cart_items) {
+      if (item.name == "Volleyball") {
+        temp = false;
+      }
+    }
+    if (temp) {
+      GlobalConstants.cart_items.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
+    }
     
     const dialogRef = this.dialog.open(Test2Diaglog);
 
