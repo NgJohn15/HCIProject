@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   items = GlobalConstants.items;
   cart = GlobalConstants.cart_items;
+  resultsReady: boolean = !(GlobalConstants.test1_fin && GlobalConstants.test2_fin && GlobalConstants.test3_fin)
 
   constructor(public dialog: MatDialog) { }
 

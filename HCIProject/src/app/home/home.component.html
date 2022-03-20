@@ -11,7 +11,7 @@
     <button mat-raised-button (click)="startTest4()">
         Begin Test 4
     </button>
-    <button mat-raised-button (click)="getResults()">
+    <button mat-raised-button (click)="getResults()" [disabled]="resultsReady">
         Get Results
     </button>
 </span>
