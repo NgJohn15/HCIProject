@@ -20,6 +20,7 @@ import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { BooksComponent } from './books/books.component';
     SportsComponent,
     ElectronicsComponent,
     ClothesComponent,
-    BooksComponent
+    BooksComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
