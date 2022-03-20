@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fadeInItems } from '@angular/material/menu';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 
 @Component({
@@ -13,7 +14,7 @@ export class BooksComponent implements OnInit {
   items = GlobalConstants.items;
   books = new Map();
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     for (let item of this.items.entries()) {
@@ -36,6 +37,8 @@ export class BooksComponent implements OnInit {
       GlobalConstants.test3_active = false;
       GlobalConstants.test3_end = dateTime;
       GlobalConstants.test3_fin = true;
+
+      this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
     }
   }
 

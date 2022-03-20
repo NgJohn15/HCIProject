@@ -12,7 +12,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HomeComponent } from './home/home.component';
@@ -21,6 +20,7 @@ import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -45,6 +45,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    MatSnackBarModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatToolbarModule,
