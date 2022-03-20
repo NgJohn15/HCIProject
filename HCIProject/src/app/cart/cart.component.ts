@@ -21,5 +21,13 @@ export class CartComponent implements OnInit {
     if (index > -1) {
       this.cart_items.splice(index, 1); // 2nd parameter means remove one item only
     }
+
+    // test2 condition
+    if (GlobalConstants.test2_active && item.name == "Volleyball") {
+      let dateTime = new Date();
+      console.log("Completed Test 2");
+      GlobalConstants.test2_active = false;
+      GlobalConstants.test2_end = dateTime;
+    }
   }
 }

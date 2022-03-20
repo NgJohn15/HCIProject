@@ -29,29 +29,45 @@ export class HomeComponent implements OnInit {
       GlobalConstants.test1_active = true;
       GlobalConstants.test1_start = dateTime;
     });
-
-    
   }
 
   startTest2() {
     let dateTime = new Date()
     console.log("Begining Test 2 " + dateTime);
-    GlobalConstants.test2_active = true;
-    GlobalConstants.test2_start = dateTime;
+    
+    const dialogRef = this.dialog.open(Test2Diaglog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Begining test2: ' + dateTime);
+      GlobalConstants.test2_active = true;
+      GlobalConstants.test2_start = dateTime;
+    });
   }
 
   startTest3() {
     let dateTime = new Date()
     console.log("Begining Test 3 " + dateTime);
-    GlobalConstants.test3_active = true;
-    GlobalConstants.test3_start = dateTime;
+
+    const dialogRef = this.dialog.open(Test3Diaglog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Begining test3: ' + dateTime);
+      GlobalConstants.test3_active = true;
+      GlobalConstants.test3_start = dateTime;
+    });
   }
 
   startTest4() {
     let dateTime = new Date()
     console.log("Begining Test 4 " + dateTime);
-    GlobalConstants.test4_active = true;
-    GlobalConstants.test4_start = dateTime;
+
+    const dialogRef = this.dialog.open(Test4Diaglog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Begining test4: ' + dateTime);
+      GlobalConstants.test4_active = true;
+      GlobalConstants.test4_start = dateTime;
+    });
   }
 
   getResults() {
@@ -71,6 +87,12 @@ export class HomeComponent implements OnInit {
         start: GlobalConstants.test1_start,
         end: GlobalConstants.test1_end,
         duration: GlobalConstants.test1_end.getTime() - GlobalConstants.test1_start.getTime()
+      },
+      {
+        testnum: 2,
+        start: GlobalConstants.test2_start,
+        end: GlobalConstants.test2_end,
+        duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime()
       }
     ];
 
@@ -90,3 +112,21 @@ export class HomeComponent implements OnInit {
   templateUrl: 'test1-dialog.html',
 })
 export class Test1Diaglog {}
+
+@Component({
+  selector: 'test2-dialog',
+  templateUrl: 'test2-dialog.html',
+})
+export class Test2Diaglog {}
+
+@Component({
+  selector: 'test3-dialog',
+  templateUrl: 'test3-dialog.html',
+})
+export class Test3Diaglog {}
+
+@Component({
+  selector: 'test4-dialog',
+  templateUrl: 'test4-dialog.html',
+})
+export class Test4Diaglog {}
