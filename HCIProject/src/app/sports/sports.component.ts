@@ -37,6 +37,7 @@ export class SportsComponent implements OnInit {
       GlobalConstants.test1_active = false;
       GlobalConstants.test1_fin = true;
 
+      // Notify User
       this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
     }
   }

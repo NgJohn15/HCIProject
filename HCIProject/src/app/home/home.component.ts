@@ -9,14 +9,31 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  test0_fin = GlobalConstants.test0_fin;
+  test1_fin = GlobalConstants.test1_fin;
+  test2_fin = GlobalConstants.test2_fin;
+  test3_fin = GlobalConstants.test3_fin;
+  
   items = GlobalConstants.items;
   cart = GlobalConstants.cart_items;
-  resultsReady: boolean = !(GlobalConstants.test1_fin && GlobalConstants.test2_fin && GlobalConstants.test3_fin)
+  resultsReady: boolean = !(GlobalConstants.test0_fin && GlobalConstants.test1_fin && GlobalConstants.test2_fin && GlobalConstants.test3_fin)
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  startTest0() {
+    let dateTime = new Date()
+    console.log("Begining Test 0 " + dateTime);
+
+    const dialogRef = this.dialog.open(Test0Diaglog);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Begining test 0: ' + dateTime);
+      GlobalConstants.test0_active = true;
+      GlobalConstants.test0_start = dateTime;
+    });
   }
 
   startTest1() {
@@ -69,19 +86,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  startTest4() {
-    let dateTime = new Date()
-    console.log("Begining Test 4 " + dateTime);
-
-    const dialogRef = this.dialog.open(Test4Diaglog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Begining test4: ' + dateTime);
-      GlobalConstants.test4_active = true;
-      GlobalConstants.test4_start = dateTime;
-    });
-  }
-
   getResults() {
     console.log(GlobalConstants.test1_start + " " + GlobalConstants.test1_end);
     var options = {
@@ -94,6 +98,12 @@ export class HomeComponent implements OnInit {
       headers: ["Test Number", "Start Time", "End Time", "Duration (ms)"]
     }
     var data = [
+      {
+        testnum: 0,
+        start: GlobalConstants.test0_start,
+        end: GlobalConstants.test0_end,
+        duration: GlobalConstants.test0_end.getTime() - GlobalConstants.test0_start.getTime()
+      },
       {
         testnum: 1,
         start: GlobalConstants.test1_start,
@@ -111,13 +121,7 @@ export class HomeComponent implements OnInit {
         start: GlobalConstants.test3_start,
         end: GlobalConstants.test3_end,
         duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime()
-      },
-      // {
-      //   testnum: 4,
-      //   start: GlobalConstants.test4_start,
-      //   end: GlobalConstants.test4_end,
-      //   duration: GlobalConstants.test4_end.getTime() - GlobalConstants.test3_start.getTime()
-      // }
+      }
     ];
 
     new ngxCsv(data, "data", options)
@@ -150,7 +154,7 @@ export class Test2Diaglog {}
 export class Test3Diaglog {}
 
 @Component({
-  selector: 'test4-dialog',
-  templateUrl: 'test4-dialog.html',
+  selector: 'test0-dialog',
+  templateUrl: 'test0-dialog.html',
 })
-export class Test4Diaglog {}
+export class Test0Diaglog {}

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing/routing.module';
-import { Test1Diaglog, Test2Diaglog, Test3Diaglog, Test4Diaglog } from './home/home.component';
+import { Test0Diaglog, Test1Diaglog, Test2Diaglog, Test3Diaglog } from './home/home.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -27,10 +27,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     AppComponent,
     HomeComponent,
+    Test0Diaglog,
     Test1Diaglog,
     Test2Diaglog,
     Test3Diaglog,
-    Test4Diaglog,
     SportsComponent,
     ElectronicsComponent,
     ClothesComponent,

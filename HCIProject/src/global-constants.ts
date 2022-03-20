@@ -1,31 +1,32 @@
 export class GlobalConstants {
     public static count: number = 0;
 
+    public static test0_start: Date;
     public static test1_start: Date;
     public static test2_start: Date;
     public static test3_start: Date;
-    public static test4_start: Date;
 
+    public static test0_end: Date;
     public static test1_end: Date;
     public static test2_end: Date;
     public static test3_end: Date;
-    public static test4_end: Date;
 
+    public static test0_fin: boolean = false;
     public static test1_fin: boolean = false;
     public static test2_fin: boolean = false;
     public static test3_fin: boolean = false;
-    public static test4_fin: boolean = false;
-
+ 
+    public static test0_misclicks: number;
     public static test1_misclicks: number;
     public static test2_misclicks: number;
     public static test3_misclicks: number;
-    public static test4_misclicks: number;
 
-
+    public static test0_active: boolean = false;
     public static test1_active: boolean = false;
     public static test2_active: boolean = false;
     public static test3_active: boolean = false;
-    public static test4_active: boolean = false;
+
+    public static test0_cart: boolean = false;
 
 
     public static items = new Map([
