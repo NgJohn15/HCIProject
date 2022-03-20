@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './routing/routing.module';
+import { Test1Diaglog } from './home/home.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
@@ -19,12 +20,14 @@ import { SportsComponent } from './sports/sports.component';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    Test1Diaglog,
     SportsComponent,
     ElectronicsComponent,
     ClothesComponent,
@@ -39,7 +42,7 @@ import { BooksComponent } from './books/books.component';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
-    
+    MatDialogModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,

@@ -17,6 +17,12 @@ export class GlobalConstants {
     public static test4_misclicks: number;
 
 
+    public static test1_active: boolean = false;
+    public static test2_active: boolean = false;
+    public static test3_active: boolean = false;
+    public static test4_active: boolean = false;
+
+
     public static items = new Map([
         [ "soccer_ball", {name: "Soccer Ball", dept: "sports", description: "Standard regulation sized soccer ball for adults."}],
         [ "foot_ball", {name: "Football", dept: "sports", description: "Standard leather regulation sized football for adults."}],
