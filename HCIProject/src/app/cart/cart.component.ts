@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalConstants } from 'src/global-constants';
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  cart_items = GlobalConstants.cart_items;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  removeItem(item: any) {
+    // get index of item
+    const index = this.cart_items.indexOf(item);
+
+    // remove item
+    if (index > -1) {
+      this.cart_items.splice(index, 1); // 2nd parameter means remove one item only
+    }
+  }
 }

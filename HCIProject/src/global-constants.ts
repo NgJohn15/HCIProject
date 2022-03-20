@@ -50,5 +50,5 @@ export class GlobalConstants {
         [ "mens_socks", {name: "10 Pack of Cotton Socks for Men", dept: "clothes", description: ""}]
     ]);
 
-    public static cart_items = [];
+    public static cart_items: any = [];
 }

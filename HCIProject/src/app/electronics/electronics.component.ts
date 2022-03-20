@@ -8,6 +8,7 @@ import { GlobalConstants } from 'src/global-constants';
 })
 export class ElectronicsComponent implements OnInit {
 
+  cart = GlobalConstants.cart_items;
   items = GlobalConstants.items;
   electronics = new Map();
   constructor() { }
@@ -20,4 +21,10 @@ export class ElectronicsComponent implements OnInit {
     }
   }
 
+  addItem(itemName: any) {
+    console.log("added" + itemName.name);
+
+    // add item to shopping list
+    this.cart.push(itemName);
+  }
 }

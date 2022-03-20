@@ -10,6 +10,7 @@ import { ngxCsv } from 'ngx-csv/ngx-csv';
 export class HomeComponent implements OnInit {
 
   items = GlobalConstants.items;
+  cart = GlobalConstants.cart_items;
   test1_start = GlobalConstants.test1_start;
   test1_end = GlobalConstants.test1_end;
 
@@ -62,6 +63,13 @@ export class HomeComponent implements OnInit {
     ];
 
     new ngxCsv(data, "data", options)
+  }
+
+  addItem(itemName: any) {
+    console.log("added" + itemName.name);
+
+    // add item to shopping list
+    this.cart.push(itemName);
   }
 
 }
