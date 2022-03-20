@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 
 @Component({
@@ -8,7 +9,7 @@ import { GlobalConstants } from 'src/global-constants';
 })
 export class CartComponent implements OnInit {
   cart_items = GlobalConstants.cart_items;
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -29,6 +30,8 @@ export class CartComponent implements OnInit {
       GlobalConstants.test2_active = false;
       GlobalConstants.test2_end = dateTime;
       GlobalConstants.test2_fin = true;
+
+      this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
     }
   }
 }
