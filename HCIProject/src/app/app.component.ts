@@ -4,7 +4,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
 import { MatDialog } from '@angular/material/dialog';
-import { is } from 'cypress/types/bluebird';
+import { Test3DialogComponent } from './test3-dialog/test3-dialog.component';
+import { Test2DialogComponent } from './test2-dialog/test2-dialog.component';
+import { Test1DialogComponent } from './test1-dialog/test1-dialog.component';
+import { Test0DialogComponent } from './test0-dialog/test0-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -67,7 +70,7 @@ export class AppComponent
   }
 
   startTest0() {
-    const dialogRef = this.dialog.open(Test0Diaglog);
+    const dialogRef = this.dialog.open(Test0DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       let dateTime = new Date()
@@ -78,7 +81,7 @@ export class AppComponent
   }
 
   startTest1() {
-    const dialogRef = this.dialog.open(Test1Diaglog);
+    const dialogRef = this.dialog.open(Test1DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       let dateTime = new Date()
@@ -105,7 +108,7 @@ export class AppComponent
       GlobalConstants.cartItems.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
     }
     
-    const dialogRef = this.dialog.open(Test2Diaglog);
+    const dialogRef = this.dialog.open(Test2DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       let dateTime = new Date()
@@ -121,7 +124,7 @@ export class AppComponent
   }
 
   startTest3() {
-    const dialogRef = this.dialog.open(Test3Diaglog);
+    const dialogRef = this.dialog.open(Test3DialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       let dateTime = new Date()
@@ -202,26 +205,26 @@ export class AppComponent
   }
 }
 
-@Component({
-  selector: 'test1-dialog',
-  templateUrl: 'test1-dialog.html',
-})
-export class Test1Diaglog {}
+// @Component({
+//   selector: 'test1-dialog',
+//   templateUrl: 'test1-dialog.html',
+// })
+// export class Test1Diaglog {}
 
-@Component({
-  selector: 'test2-dialog',
-  templateUrl: 'test2-dialog.html',
-})
-export class Test2Diaglog {}
+// @Component({
+//   selector: 'test2-dialog',
+//   templateUrl: 'test2-dialog.html',
+// })
+// export class Test2Diaglog {}
 
-@Component({
-  selector: 'test3-dialog',
-  templateUrl: 'test3-dialog.html',
-})
-export class Test3Diaglog {}
+// @Component({
+//   selector: 'test3-dialog',
+//   templateUrl: 'test3-dialog.html',
+// })
+// export class Test3Diaglog {}
 
-@Component({
-  selector: 'test0-dialog',
-  templateUrl: 'test0-dialog.html',
-})
-export class Test0Diaglog {}
+// @Component({
+//   selector: 'test0-dialog',
+//   templateUrl: 'test0-dialog.html',
+// })
+// exort class Test0Diaglog {}

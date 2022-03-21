@@ -21,6 +21,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DynamicCartComponent } from './dynamic-cart/dynamic-cart.component'
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { Test0DialogComponent } from './test0-dialog/test0-dialog.component';
+import { Test1DialogComponent } from './test1-dialog/test1-dialog.component';
+import { Test2DialogComponent } from './test2-dialog/test2-dialog.component';
+import { Test3DialogComponent } from './test3-dialog/test3-dialog.component';
 
 
 @NgModule({
@@ -29,7 +33,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     DynamicToolbarComponent,
     DynamicGridComponent,
     StoreItemModalComponent,
-    DynamicCartComponent
+    DynamicCartComponent,
+    Test0DialogComponent,
+    Test1DialogComponent,
+    Test2DialogComponent,
+    Test3DialogComponent
   ],
   imports: [
     BrowserModule,
