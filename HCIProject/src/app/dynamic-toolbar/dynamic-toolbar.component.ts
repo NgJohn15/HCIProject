@@ -1,5 +1,6 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MatButton } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dynamic-toolbar',
@@ -26,7 +27,6 @@ export class DynamicToolbarComponent implements OnInit
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) 
   {
-    console.log(event.clientX, event.clientY);
     this.mousePositionX = event.clientX;
   }
 

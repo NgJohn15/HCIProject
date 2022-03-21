@@ -1,13 +1,12 @@
-<div style="width: 100%; display: flex; flex-wrap: wrap">
-    <div *ngFor="let item of storeItems" #card [style.width.px]="getCardSize(card)" [style.height.px]="getCardSize(card)" style="display: flex;">
-        <mat-card style="flex-grow: 1;">
-            <mat-card-title>{{item.name}}</mat-card-title>
-            <mat-card-content>
-                {{item.description}}
-            </mat-card-content>
-            <mat-card-footer>
-                <button mat-stroked-button>Add To Cart</button>
-            </mat-card-footer>
-        </mat-card>        
-    </div>
+<div style="width: 100%; display: grid; grid-template-columns: auto auto auto auto; grid-gap: 16px; flex-wrap: wrap">
+    <ng-container *ngFor="let item of storeItems">
+        <div #card *ngIf="item.dept == getRouterURL() || getRouterURL() == ''" [style.width.px]="getCardSize(card)" [style.height.px]="getCardSize(card)" style="display: flex;">
+            <mat-card style="flex-grow: 1; overflow: hidden" (click)="openItem(item)">
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-content>
+                    {{item.description}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </ng-container>    
 </div>

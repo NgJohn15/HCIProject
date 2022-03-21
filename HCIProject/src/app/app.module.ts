@@ -21,7 +21,9 @@ import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
 import { ExportToCSV } from "@molteni/export-csv";
 import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.component';
-import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component'; 
+import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
+import { StoreItemModalComponent } from './store-item-modal/store-item-modal.component'; 
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
     ClothesComponent,
     BooksComponent,
     DynamicToolbarComponent,
-    DynamicGridComponent
+    DynamicGridComponent,
+    StoreItemModalComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +45,7 @@ import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
+    MatDialogModule,
     
     BrowserAnimationsModule,
     MatToolbarModule,
