@@ -17,11 +17,6 @@ import { Test0DialogComponent } from './test0-dialog/test0-dialog.component';
 export class AppComponent 
 {
   title = 'HCIProject';
-  cartCount = GlobalConstants.count;
-  // test0_fin = GlobalConstants.test0_fin;
-  // test1_fin = GlobalConstants.test1_fin;
-  // test2_fin = GlobalConstants.test2_fin;
-  // test3_fin = GlobalConstants.test3_fin;
 
   constructor(private router: Router, private snackBar: MatSnackBar, public dialog: MatDialog) { }
 
@@ -204,27 +199,3 @@ export class AppComponent
     new ngxCsv(data, "data", options)
   }
 }
-
-// @Component({
-//   selector: 'test1-dialog',
-//   templateUrl: 'test1-dialog.html',
-// })
-// export class Test1Diaglog {}
-
-// @Component({
-//   selector: 'test2-dialog',
-//   templateUrl: 'test2-dialog.html',
-// })
-// export class Test2Diaglog {}
-
-// @Component({
-//   selector: 'test3-dialog',
-//   templateUrl: 'test3-dialog.html',
-// })
-// export class Test3Diaglog {}
-
-// @Component({
-//   selector: 'test0-dialog',
-//   templateUrl: 'test0-dialog.html',
-// })
-// exort class Test0Diaglog {}
