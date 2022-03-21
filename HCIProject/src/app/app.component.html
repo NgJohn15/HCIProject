@@ -1,11 +1,43 @@
 <mat-toolbar class="spacer" color="primary">
     <span>
-        <a button mat-button (click)="test0_fin()" routerLink=""><mat-icon>assignment</mat-icon>Not Amazon</a>
+        <a button mat-button (click)="test0_finish()" routerLink=""><mat-icon>assignment</mat-icon>Not Amazon</a>
     </span>
     <mat-slide-toggle #dynamicUI>Dynamic UI</mat-slide-toggle>
     <a mat-raised-button routerLink="cart">Shopping Cart</a>
     <!-- <a mat-raised-button (click)="test0()" routerLink="cart">Shopping Cart</a> -->
 </mat-toolbar>
+
+<!-- Test Buttons -->
+<span>
+    <button mat-raised-button
+        (click)="startTest0()"
+        [color]="(test0_fin) ? 'primary' : 'warn'">
+        Begin Test 0
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button 
+        (click)="startTest1()"
+        [color]="(test1_fin) ? 'primary' : 'warn'">
+        Begin Test 1
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button
+        (click)="startTest2()"
+        [color]="(test2_fin) ? 'primary' : 'warn'">
+        Begin Test 2
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button
+        (click)="startTest3()"
+        [color]="(test3_fin) ? 'primary' : 'warn'">
+        Begin Test 3
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button (click)="getResults()" [disabled]="resultsReady">
+        Get Results
+    </button>
+</span>
+
 <dynamic-toolbar *ngIf="getRouterURL() != 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-toolbar>
 <dynamic-grid *ngIf="getRouterURL() != 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-grid>
 <dynamic-cart *ngIf="getRouterURL() == 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-cart>
