@@ -14,6 +14,26 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  emptyClick() {
+    console.log("empty click");
+    if (GlobalConstants.test0_active) {
+      console.log("empty click");
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      console.log("empty click");
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test2_active) {
+      console.log("empty click");
+      GlobalConstants.test2_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      console.log("empty click");
+      GlobalConstants.test3_total_clicks += 1;
+    }
+  }
+
   removeItem(item: any) {
     // get index of item
     const index = this.cart_items.indexOf(item);
@@ -30,6 +50,9 @@ export class CartComponent implements OnInit {
       GlobalConstants.test2_active = false;
       GlobalConstants.test2_end = dateTime;
       GlobalConstants.test2_fin = true;
+
+      GlobalConstants.test2_on_clicks += 1;
+      GlobalConstants.test2_total_clicks += 1;
 
       this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
     }

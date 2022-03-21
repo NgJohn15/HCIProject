@@ -15,11 +15,6 @@ export class GlobalConstants {
     public static test1_fin: boolean = false;
     public static test2_fin: boolean = false;
     public static test3_fin: boolean = false;
- 
-    public static test0_misclicks: number;
-    public static test1_misclicks: number;
-    public static test2_misclicks: number;
-    public static test3_misclicks: number;
 
     public static test0_active: boolean = false;
     public static test1_active: boolean = false;
@@ -27,6 +22,16 @@ export class GlobalConstants {
     public static test3_active: boolean = false;
 
     public static test0_cart: boolean = false;
+
+    public static test0_total_clicks: number = 0;
+    public static test1_total_clicks: number = 0;
+    public static test2_total_clicks: number = 0;
+    public static test3_total_clicks: number = 0;
+
+    public static test0_on_clicks: number = 0;
+    public static test1_on_clicks: number = 0;
+    public static test2_on_clicks: number = 0;
+    public static test3_on_clicks: number = 0;
 
 
     public static items = new Map([

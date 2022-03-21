@@ -21,6 +21,26 @@ export class ClothesComponent implements OnInit {
     }
   }
 
+  emptyClick() {
+    console.log("empty click");
+    if (GlobalConstants.test0_active) {
+      console.log("empty click");
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      console.log("empty click");
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test2_active) {
+      console.log("empty click");
+      GlobalConstants.test2_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      console.log("empty click");
+      GlobalConstants.test3_total_clicks += 1;
+    }
+  }
+
   addItem(itemName: any) {
     console.log("added" + itemName.name);
 
