@@ -2,8 +2,8 @@
     <span>
         <a button mat-button (click)="test0_finish()" routerLink=""><mat-icon>assignment</mat-icon>Not Amazon</a>
     </span>
-    <mat-slide-toggle #dynamicUI>Dynamic UI</mat-slide-toggle>
-    <a mat-raised-button routerLink="cart">Shopping Cart</a>
+    <mat-slide-toggle (click)="toggleDynamic(dynamicUI.checked)" #dynamicUI>Dynamic UI</mat-slide-toggle>
+    <a mat-raised-button (click)="test0()" routerLink="cart">Shopping Cart</a>
     <!-- <a mat-raised-button (click)="test0()" routerLink="cart">Shopping Cart</a> -->
 </mat-toolbar>
 
@@ -11,29 +11,29 @@
 <span>
     <button mat-raised-button
         (click)="startTest0()"
-        [color]="(test0_fin) ? 'primary' : 'warn'">
+        [color]="getTest0_fin() ? 'primary' : 'warn'">
         Begin Test 0
     </button>
     &nbsp;&nbsp;&nbsp;
     <button mat-raised-button 
         (click)="startTest1()"
-        [color]="(test1_fin) ? 'primary' : 'warn'">
+        [color]="getTest1_fin() ? 'primary' : 'warn'">
         Begin Test 1
     </button>
     &nbsp;&nbsp;&nbsp;
     <button mat-raised-button
         (click)="startTest2()"
-        [color]="(test2_fin) ? 'primary' : 'warn'">
+        [color]="getTest2_fin() ? 'primary' : 'warn'">
         Begin Test 2
     </button>
     &nbsp;&nbsp;&nbsp;
     <button mat-raised-button
         (click)="startTest3()"
-        [color]="(test3_fin) ? 'primary' : 'warn'">
+        [color]="getTest3_fin() ? 'primary' : 'warn'">
         Begin Test 3
     </button>
     &nbsp;&nbsp;&nbsp;
-    <button mat-raised-button (click)="getResults()" [disabled]="resultsReady">
+    <button mat-raised-button (click)="getResults()" [disabled]="getResultsReady()">
         Get Results
     </button>
 </span>

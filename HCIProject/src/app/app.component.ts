@@ -4,6 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 import { ngxCsv } from 'ngx-csv/ngx-csv';
 import { MatDialog } from '@angular/material/dialog';
+import { is } from 'cypress/types/bluebird';
 
 @Component({
   selector: 'app-root',
@@ -14,17 +15,29 @@ export class AppComponent
 {
   title = 'HCIProject';
   cartCount = GlobalConstants.count;
-  test0_fin = GlobalConstants.test0_fin;
-  test1_fin = GlobalConstants.test1_fin;
-  test2_fin = GlobalConstants.test2_fin;
-  test3_fin = GlobalConstants.test3_fin;
-  resultsReady: boolean = !(GlobalConstants.test0_fin && GlobalConstants.test1_fin && GlobalConstants.test2_fin && GlobalConstants.test3_fin)
+  // test0_fin = GlobalConstants.test0_fin;
+  // test1_fin = GlobalConstants.test1_fin;
+  // test2_fin = GlobalConstants.test2_fin;
+  // test3_fin = GlobalConstants.test3_fin;
 
   constructor(private router: Router, private snackBar: MatSnackBar, public dialog: MatDialog) { }
 
   getRouterURL(): string
   {
     return this.router.url.slice(1);
+  }
+
+  getTest0_fin() {
+    return GlobalConstants.test0_fin;
+  }
+  getTest1_fin() {
+    return GlobalConstants.test1_fin;
+  }
+  getTest2_fin() {
+    return GlobalConstants.test2_fin;
+  }
+  getTest3_fin() {
+    return GlobalConstants.test3_fin;
   }
 
   test0() {
@@ -49,18 +62,15 @@ export class AppComponent
 
       GlobalConstants.test0_on_clicks += 1;
       GlobalConstants.test0_total_clicks += 1;
-
       this.snackBar.open("Test 0 Complete", "Dismiss", { duration: 1500});
     }
   }
 
   startTest0() {
-    let dateTime = new Date()
-    console.log("Begining Test 0 " + dateTime);
-
     const dialogRef = this.dialog.open(Test0Diaglog);
 
     dialogRef.afterClosed().subscribe(result => {
+      let dateTime = new Date()
       console.log('Begining test 0: ' + dateTime);
       GlobalConstants.test0_active = true;
       GlobalConstants.test0_start = dateTime;
@@ -68,12 +78,10 @@ export class AppComponent
   }
 
   startTest1() {
-    let dateTime = new Date()
-    console.log("Begining Test 1 " + dateTime);
-
     const dialogRef = this.dialog.open(Test1Diaglog);
 
     dialogRef.afterClosed().subscribe(result => {
+      let dateTime = new Date()
       console.log('Begining test1: ' +dateTime);
       GlobalConstants.test1_active = true;
       GlobalConstants.test1_start = dateTime;
@@ -86,23 +94,21 @@ export class AppComponent
   }
 
   startTest2() {
-    let dateTime = new Date()
-    console.log("Begining Test 2 " + dateTime);
-
     // add volleyball item to cart if one doesn't already exist
     let temp = true;
-    for (let item of GlobalConstants.cart_items) {
+    for (let item of GlobalConstants.cartItems) {
       if (item.name == "Volleyball") {
         temp = false;
       }
     }
     if (temp) {
-      GlobalConstants.cart_items.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
+      GlobalConstants.cartItems.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
     }
     
     const dialogRef = this.dialog.open(Test2Diaglog);
 
     dialogRef.afterClosed().subscribe(result => {
+      let dateTime = new Date()
       console.log('Begining test2: ' + dateTime);
       GlobalConstants.test2_active = true;
       GlobalConstants.test2_start = dateTime;
@@ -115,12 +121,10 @@ export class AppComponent
   }
 
   startTest3() {
-    let dateTime = new Date()
-    console.log("Begining Test 3 " + dateTime);
-
     const dialogRef = this.dialog.open(Test3Diaglog);
 
     dialogRef.afterClosed().subscribe(result => {
+      let dateTime = new Date()
       console.log('Begining test3: ' + dateTime);
       GlobalConstants.test3_active = true;
       GlobalConstants.test3_start = dateTime;
@@ -132,8 +136,16 @@ export class AppComponent
     });
   }
 
+  toggleDynamic(isDynamic: boolean) {
+    console.log(!isDynamic);
+    GlobalConstants.isDynamic = !isDynamic;
+  }
+
+  getResultsReady() {
+    return !(GlobalConstants.test0_fin && GlobalConstants.test1_fin && GlobalConstants.test2_fin && GlobalConstants.test3_fin);
+  }
+
   getResults() {
-    console.log(GlobalConstants.test1_start + " " + GlobalConstants.test1_end);
     var options = {
       fieldSeparator: ',',
       quoteStrings: '"',
@@ -141,7 +153,7 @@ export class AppComponent
       showLabels: true,
       showTitle: true,
       title: 'Static Test Data',
-      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)", "Total Clicks", "Accurate Clicks", "Click Accuracy"]
+      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)", "Total Clicks", "Accurate Clicks", "Click Accuracy", "isDynamic"]
     }
     var data = [
       {
@@ -151,7 +163,8 @@ export class AppComponent
         duration: GlobalConstants.test0_end.getTime() - GlobalConstants.test0_start.getTime(),
         total_clicks: GlobalConstants.test0_total_clicks,
         on_clicks: GlobalConstants.test0_on_clicks,
-        click_acc: GlobalConstants.test0_on_clicks/GlobalConstants.test0_total_clicks
+        click_acc: GlobalConstants.test0_on_clicks/GlobalConstants.test0_total_clicks,
+        isDynamic: GlobalConstants.isDynamic
       },
       {
         testnum: 1,
@@ -160,7 +173,8 @@ export class AppComponent
         duration: GlobalConstants.test1_end.getTime() - GlobalConstants.test1_start.getTime(),
         total_clicks: GlobalConstants.test1_total_clicks,
         on_clicks: GlobalConstants.test1_on_clicks,
-        click_acc: GlobalConstants.test1_on_clicks/GlobalConstants.test1_total_clicks
+        click_acc: GlobalConstants.test1_on_clicks/GlobalConstants.test1_total_clicks,
+        isDynamic: GlobalConstants.isDynamic
       },
       {
         testnum: 2,
@@ -169,7 +183,8 @@ export class AppComponent
         duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime(),
         total_clicks: GlobalConstants.test2_total_clicks,
         on_clicks: GlobalConstants.test2_on_clicks,
-        click_acc: GlobalConstants.test2_on_clicks/GlobalConstants.test2_total_clicks
+        click_acc: GlobalConstants.test2_on_clicks/GlobalConstants.test2_total_clicks,
+        isDynamic: GlobalConstants.isDynamic
       },
       {
         testnum: 3,
@@ -178,7 +193,8 @@ export class AppComponent
         duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime(),
         total_clicks: GlobalConstants.test3_total_clicks,
         on_clicks: GlobalConstants.test3_on_clicks,
-        click_acc: GlobalConstants.test3_on_clicks/GlobalConstants.test3_total_clicks
+        click_acc: GlobalConstants.test3_on_clicks/GlobalConstants.test3_total_clicks,
+        isDynamic: GlobalConstants.isDynamic
       }
     ];
 

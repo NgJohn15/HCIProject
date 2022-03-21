@@ -1,4 +1,5 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants, StoreItem } from 'src/global-constants';
 
 @Component({
@@ -16,7 +17,7 @@ export class DynamicCartComponent
   cardMinHeight: number = 75;
   cardMaxHeight: number = 200;
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) 
   {
@@ -32,7 +33,20 @@ export class DynamicCartComponent
   {
     let index = this.cartItems.indexOf(item);
     this.cartItems.splice(index, 1);
-    //GlobalConstants.cartItems.splice(index, 1);
+
+    // test2 condition
+    if (GlobalConstants.test2_active && item.name == "Volleyball") {
+      let dateTime = new Date();
+      console.log("Completed Test 2");
+      GlobalConstants.test2_active = false;
+      GlobalConstants.test2_end = dateTime;
+      GlobalConstants.test2_fin = true;
+
+      GlobalConstants.test2_on_clicks += 1;
+      GlobalConstants.test2_total_clicks += 1;
+
+      this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
+    }
   }
 
   getCardHeight(card: any): number

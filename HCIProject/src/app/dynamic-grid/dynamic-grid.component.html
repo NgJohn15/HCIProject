@@ -1,4 +1,4 @@
-<div style="width: 100%; display: grid; grid-template-columns: auto auto auto auto; grid-gap: 16px; flex-wrap: wrap; padding: 16px; box-sizing: border-box;">
+<div (click)="emptyClick()" style="width: 100%; display: grid; grid-template-columns: auto auto auto auto; grid-gap: 16px; flex-wrap: wrap; padding: 16px; box-sizing: border-box;">
     <ng-container *ngFor="let item of storeItems">
         <div #card *ngIf="item.dept == getRouterURL() || getRouterURL() == ''" [style.width.px]="getCardSize(card)" [style.height.px]="getCardSize(card)" style="display: flex;">
             <mat-card style="flex-grow: 1; overflow: hidden" (click)="openItem(item)">
