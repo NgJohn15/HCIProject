@@ -1,8 +1,0 @@
-.item-card {
-    min-width: 400px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
