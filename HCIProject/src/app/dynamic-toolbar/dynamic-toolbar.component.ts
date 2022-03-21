@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class DynamicToolbarComponent implements OnInit 
 {
+  @Input() enableDynamic: boolean = false;
+
   buttons: ToolbarButton[] = [
     {routerLink: "", text: "All"},
     {routerLink: "sports", text: "Sports"},
@@ -32,9 +34,13 @@ export class DynamicToolbarComponent implements OnInit
 
   getButtonWidth(button: MatButton): number
   {
-    let distance = Math.abs(this.mousePositionX - (button._elementRef.nativeElement.offsetLeft + button._elementRef.nativeElement.offsetWidth / 2));
-    let size = this.lerp(this.buttonMinWidth, this.buttonMaxWidth, Math.max(0, 1 - distance / 200));
-    return size;
+    if (this.enableDynamic)
+    {
+      let distance = Math.abs(this.mousePositionX - (button._elementRef.nativeElement.offsetLeft + button._elementRef.nativeElement.offsetWidth / 2));
+      let size = this.lerp(this.buttonMinWidth, this.buttonMaxWidth, Math.max(0, 1 - distance / 200));
+      return size;
+    }
+    return this.buttonMinWidth;
   }
 
   lerp(a: number, b: number, t: number): number 

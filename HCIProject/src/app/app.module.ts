@@ -24,6 +24,7 @@ import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.compo
 import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
 import { StoreItemModalComponent } from './store-item-modal/store-item-modal.component'; 
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatMenuModule,
     MatCardModule,
     MatDialogModule,
+    MatSlideToggleModule,
     
     BrowserAnimationsModule,
     MatToolbarModule,

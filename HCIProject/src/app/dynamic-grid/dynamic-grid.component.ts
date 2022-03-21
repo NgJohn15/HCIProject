@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { GlobalConstants, StoreItem } from 'src/global-constants';
@@ -11,6 +11,8 @@ import { StoreItemModalComponent } from '../store-item-modal/store-item-modal.co
 })
 export class DynamicGridComponent implements OnInit 
 {
+  @Input() enableDynamic: boolean = false;
+
   storeItems: StoreItem[] = GlobalConstants.storeItems;
 
   mousePositionX: number = 0;
@@ -37,11 +39,15 @@ export class DynamicGridComponent implements OnInit
 
   getCardSize(card: any): number
   {
-    let cardX = card.offsetLeft + card.offsetWidth / 2;
-    let cardY = card.offsetTop + card.offsetHeight / 2;
-    let distance = Math.sqrt(Math.pow(this.mousePositionX - cardX, 2) + Math.pow(this.mousePositionY + this.scrollPosition - cardY, 2));
-    let size = this.lerp(this.cardMinSize, this.cardMaxSize, Math.max(0, 1 - distance / 600));
-    return size;
+    if (this.enableDynamic)
+    {
+      let cardX = card.offsetLeft + card.offsetWidth / 2;
+      let cardY = card.offsetTop + card.offsetHeight / 2;
+      let distance = Math.sqrt(Math.pow(this.mousePositionX - cardX, 2) + Math.pow(this.mousePositionY + this.scrollPosition - cardY, 2));
+      let size = this.lerp(this.cardMinSize, this.cardMaxSize, Math.max(0, 1 - distance / 600));
+      return size;
+    }
+    return this.cardMinSize;
   }
 
   lerp(a: number, b: number, t: number): number 

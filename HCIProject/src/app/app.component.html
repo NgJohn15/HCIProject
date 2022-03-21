@@ -2,9 +2,9 @@
     <span>
         <a button mat-button routerLink=""><mat-icon>assignment</mat-icon>Not Amazon</a>
     </span>
-    <input matInput #searchbar value="">
+    <mat-slide-toggle #dynamicUI>Dynamic UI</mat-slide-toggle>
     <a mat-raised-button routerLink="cart">Shopping Cart</a>
 </mat-toolbar>
-<dynamic-toolbar></dynamic-toolbar>
+<dynamic-toolbar [enableDynamic]="dynamicUI.checked"></dynamic-toolbar>
 <!-- <router-outlet></router-outlet> -->
-<dynamic-grid></dynamic-grid>
+<dynamic-grid [enableDynamic]="dynamicUI.checked"></dynamic-grid>
