@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { StoreItem } from 'src/global-constants';
+import { GlobalConstants, StoreItem } from 'src/global-constants';
 
 @Component({
   selector: 'app-store-item-modal',
@@ -21,7 +21,7 @@ export class StoreItemModalComponent implements OnInit {
 
   addToCart(): void
   {
+    GlobalConstants.cartItems.push(this.data);
     this.dialogRef.close();
   }
-
 }

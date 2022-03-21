@@ -60,6 +60,8 @@ export class GlobalConstants
 
     public static cart_items = [];
 
+    public static cartItems: StoreItem[] = [];
+
     public static storeItems: StoreItem[] = [
         {name: "Soccer Ball", dept: "sports", description: "Standard regulation sized soccer ball for adults."},
         {name: "Football", dept: "sports", description: "Standard leather regulation sized football for adults."},

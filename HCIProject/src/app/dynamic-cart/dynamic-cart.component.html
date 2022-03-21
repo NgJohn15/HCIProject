@@ -1,0 +1,8 @@
+<div style="width: 100%; display: flex; flex-direction: column; gap: 16px; padding: 16px; box-sizing: border-box;">
+    <div *ngFor="let item of cartItems" #card [style.height.px]="getCardHeight(card)" style="display: flex">
+        <mat-card style="flex-grow: 1; display: flex; justify-content: space-between;">
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <button mat-stroked-button (click)="removeItem(item)">Remove</button>
+        </mat-card>
+    </div>
+</div>

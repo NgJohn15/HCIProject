@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { GlobalConstants } from 'src/global-constants';
 
 @Component({
@@ -6,9 +7,15 @@ import { GlobalConstants } from 'src/global-constants';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent 
+{
   title = 'HCIProject';
   cartCount = GlobalConstants.count;
-  constructor() {
+
+  constructor(private router: Router) { }
+
+  getRouterURL(): string
+  {
+    return this.router.url.slice(1);
   }
 }

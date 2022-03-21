@@ -24,7 +24,8 @@ import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.compo
 import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
 import { StoreItemModalComponent } from './store-item-modal/store-item-modal.component'; 
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DynamicCartComponent } from './dynamic-cart/dynamic-cart.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle'
     BooksComponent,
     DynamicToolbarComponent,
     DynamicGridComponent,
-    StoreItemModalComponent
+    StoreItemModalComponent,
+    DynamicCartComponent
   ],
   imports: [
     BrowserModule,

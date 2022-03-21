@@ -5,6 +5,6 @@
     <mat-slide-toggle #dynamicUI>Dynamic UI</mat-slide-toggle>
     <a mat-raised-button routerLink="cart">Shopping Cart</a>
 </mat-toolbar>
-<dynamic-toolbar [enableDynamic]="dynamicUI.checked"></dynamic-toolbar>
-<!-- <router-outlet></router-outlet> -->
-<dynamic-grid [enableDynamic]="dynamicUI.checked"></dynamic-grid>
+<dynamic-toolbar *ngIf="getRouterURL() != 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-toolbar>
+<dynamic-grid *ngIf="getRouterURL() != 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-grid>
+<dynamic-cart *ngIf="getRouterURL() == 'cart'" [enableDynamic]="dynamicUI.checked"></dynamic-cart>
