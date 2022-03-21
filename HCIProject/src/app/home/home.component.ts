@@ -46,6 +46,11 @@ export class HomeComponent implements OnInit {
       console.log('Begining test1: ' +dateTime);
       GlobalConstants.test1_active = true;
       GlobalConstants.test1_start = dateTime;
+
+      // stop all other active tracks
+      GlobalConstants.test0_active = false;
+      GlobalConstants.test2_active = false;
+      GlobalConstants.test3_active = false;
     });
   }
 
@@ -70,6 +75,11 @@ export class HomeComponent implements OnInit {
       console.log('Begining test2: ' + dateTime);
       GlobalConstants.test2_active = true;
       GlobalConstants.test2_start = dateTime;
+
+      // stop all other active tracks
+      GlobalConstants.test0_active = false;
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test3_active = false;
     });
   }
 
@@ -83,6 +93,11 @@ export class HomeComponent implements OnInit {
       console.log('Begining test3: ' + dateTime);
       GlobalConstants.test3_active = true;
       GlobalConstants.test3_start = dateTime;
+
+      // stop all other active tracks
+      GlobalConstants.test0_active = false;
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test2_active = false;
     });
   }
 
