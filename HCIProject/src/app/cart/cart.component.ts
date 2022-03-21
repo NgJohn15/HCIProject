@@ -51,6 +51,9 @@ export class CartComponent implements OnInit {
       GlobalConstants.test2_end = dateTime;
       GlobalConstants.test2_fin = true;
 
+      GlobalConstants.test2_on_clicks += 1;
+      GlobalConstants.test2_total_clicks += 1;
+
       this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
     }
   }

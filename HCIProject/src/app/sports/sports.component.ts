@@ -45,6 +45,20 @@ export class SportsComponent implements OnInit {
   addItem(itemName: any) {
     console.log("added " + itemName.name);
 
+    // click data
+    if (GlobalConstants.test0_active) {
+      GlobalConstants.test0_on_clicks += 1;
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      GlobalConstants.test1_on_clicks += 1;
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      GlobalConstants.test3_on_clicks += 1;
+      GlobalConstants.test3_total_clicks += 1;
+    }
+
     // add item to shopping list
     this.cart.push(itemName);
 

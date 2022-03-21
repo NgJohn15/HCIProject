@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit {
       showLabels: true,
       showTitle: true,
       title: 'Static Test Data',
-      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)", "Total Clicks"]
+      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)", "Total Clicks", "Accurate Clicks", "Click Accuracy"]
     }
     var data = [
       {
@@ -103,28 +103,36 @@ export class HomeComponent implements OnInit {
         start: GlobalConstants.test0_start,
         end: GlobalConstants.test0_end,
         duration: GlobalConstants.test0_end.getTime() - GlobalConstants.test0_start.getTime(),
-        total_clicks: GlobalConstants.test0_total_clicks
+        total_clicks: GlobalConstants.test0_total_clicks,
+        on_clicks: GlobalConstants.test0_on_clicks,
+        click_acc: GlobalConstants.test0_on_clicks/GlobalConstants.test0_total_clicks
       },
       {
         testnum: 1,
         start: GlobalConstants.test1_start,
         end: GlobalConstants.test1_end,
         duration: GlobalConstants.test1_end.getTime() - GlobalConstants.test1_start.getTime(),
-        total_clicks: GlobalConstants.test1_total_clicks
+        total_clicks: GlobalConstants.test1_total_clicks,
+        on_clicks: GlobalConstants.test1_on_clicks,
+        click_acc: GlobalConstants.test1_on_clicks/GlobalConstants.test1_total_clicks
       },
       {
         testnum: 2,
         start: GlobalConstants.test2_start,
         end: GlobalConstants.test2_end,
         duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime(),
-        total_clicks: GlobalConstants.test2_total_clicks
+        total_clicks: GlobalConstants.test2_total_clicks,
+        on_clicks: GlobalConstants.test2_on_clicks,
+        click_acc: GlobalConstants.test2_on_clicks/GlobalConstants.test2_total_clicks
       },
       {
         testnum: 3,
         start: GlobalConstants.test3_start,
         end: GlobalConstants.test3_end,
         duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime(),
-        total_clicks: GlobalConstants.test3_total_clicks
+        total_clicks: GlobalConstants.test3_total_clicks,
+        on_clicks: GlobalConstants.test3_on_clicks,
+        click_acc: GlobalConstants.test3_on_clicks/GlobalConstants.test3_total_clicks
       }
     ];
 

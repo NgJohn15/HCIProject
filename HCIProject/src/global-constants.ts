@@ -15,11 +15,6 @@ export class GlobalConstants {
     public static test1_fin: boolean = false;
     public static test2_fin: boolean = false;
     public static test3_fin: boolean = false;
- 
-    public static test0_misclicks: number;
-    public static test1_misclicks: number;
-    public static test2_misclicks: number;
-    public static test3_misclicks: number;
 
     public static test0_active: boolean = false;
     public static test1_active: boolean = false;
