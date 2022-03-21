@@ -95,32 +95,36 @@ export class HomeComponent implements OnInit {
       showLabels: true,
       showTitle: true,
       title: 'Static Test Data',
-      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)"]
+      headers: ["Test Number", "Start Time", "End Time", "Duration (ms)", "Total Clicks"]
     }
     var data = [
       {
         testnum: 0,
         start: GlobalConstants.test0_start,
         end: GlobalConstants.test0_end,
-        duration: GlobalConstants.test0_end.getTime() - GlobalConstants.test0_start.getTime()
+        duration: GlobalConstants.test0_end.getTime() - GlobalConstants.test0_start.getTime(),
+        total_clicks: GlobalConstants.test0_total_clicks
       },
       {
         testnum: 1,
         start: GlobalConstants.test1_start,
         end: GlobalConstants.test1_end,
-        duration: GlobalConstants.test1_end.getTime() - GlobalConstants.test1_start.getTime()
+        duration: GlobalConstants.test1_end.getTime() - GlobalConstants.test1_start.getTime(),
+        total_clicks: GlobalConstants.test1_total_clicks
       },
       {
         testnum: 2,
         start: GlobalConstants.test2_start,
         end: GlobalConstants.test2_end,
-        duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime()
+        duration: GlobalConstants.test2_end.getTime() - GlobalConstants.test2_start.getTime(),
+        total_clicks: GlobalConstants.test2_total_clicks
       },
       {
         testnum: 3,
         start: GlobalConstants.test3_start,
         end: GlobalConstants.test3_end,
-        duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime()
+        duration: GlobalConstants.test3_end.getTime() - GlobalConstants.test3_start.getTime(),
+        total_clicks: GlobalConstants.test3_total_clicks
       }
     ];
 
@@ -132,6 +136,26 @@ export class HomeComponent implements OnInit {
 
     // add item to shopping list
     this.cart.push(itemName);
+  }
+
+  emptyClick() {
+    console.log("empty click");
+    if (GlobalConstants.test0_active) {
+      console.log("empty click");
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      console.log("empty click");
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test2_active) {
+      console.log("empty click");
+      GlobalConstants.test2_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      console.log("empty click");
+      GlobalConstants.test3_total_clicks += 1;
+    }
   }
 }
 

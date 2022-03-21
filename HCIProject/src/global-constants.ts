@@ -28,6 +28,16 @@ export class GlobalConstants {
 
     public static test0_cart: boolean = false;
 
+    public static test0_total_clicks: number = 0;
+    public static test1_total_clicks: number = 0;
+    public static test2_total_clicks: number = 0;
+    public static test3_total_clicks: number = 0;
+
+    public static test0_on_clicks: number = 0;
+    public static test1_on_clicks: number = 0;
+    public static test2_on_clicks: number = 0;
+    public static test3_on_clicks: number = 0;
+
 
     public static items = new Map([
         [ "soccer_ball", {name: "Soccer Ball", dept: "sports", description: "Standard regulation sized soccer ball for adults."}],
