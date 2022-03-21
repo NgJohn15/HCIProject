@@ -1,0 +1,13 @@
+<div style="width: 100%; display: flex; flex-wrap: wrap">
+    <div *ngFor="let item of storeItems" #card [style.width.px]="getCardSize(card)" [style.height.px]="getCardSize(card)" style="display: flex;">
+        <mat-card style="flex-grow: 1;">
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <mat-card-content>
+                {{item.description}}
+            </mat-card-content>
+            <mat-card-footer>
+                <button mat-stroked-button>Add To Cart</button>
+            </mat-card-footer>
+        </mat-card>        
+    </div>
+</div>

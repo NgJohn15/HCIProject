@@ -20,7 +20,8 @@ import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
 import { ExportToCSV } from "@molteni/export-csv";
-import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.component'; 
+import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.component';
+import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component'; 
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.compo
     ElectronicsComponent,
     ClothesComponent,
     BooksComponent,
-    DynamicToolbarComponent
+    DynamicToolbarComponent,
+    DynamicGridComponent
   ],
   imports: [
     BrowserModule,
