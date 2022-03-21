@@ -1,23 +1,35 @@
 <span>
-    <button mat-raised-button (click)="startTest1()">
+    <button mat-raised-button
+        (click)="startTest0()"
+        [color]="(test0_fin) ? 'primary' : 'warn'">
+        Begin Test 0
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button 
+        (click)="startTest1()"
+        [color]="(test1_fin) ? 'primary' : 'warn'">
         Begin Test 1
     </button>
-    <button mat-raised-button (click)="startTest2()">
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button
+        (click)="startTest2()"
+        [color]="(test2_fin) ? 'primary' : 'warn'">
         Begin Test 2
     </button>
-    <button mat-raised-button (click)="startTest3()">
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button
+        (click)="startTest3()"
+        [color]="(test3_fin) ? 'primary' : 'warn'">
         Begin Test 3
     </button>
-    <button mat-raised-button (click)="startTest4()">
-        Begin Test 4
-    </button>
-    <button mat-raised-button (click)="getResults()">
+    &nbsp;&nbsp;&nbsp;
+    <button mat-raised-button (click)="getResults()" [disabled]="resultsReady">
         Get Results
     </button>
 </span>
 
 
-<div class="grid">
+<div class="grid" (click)="emptyClick()">
     <ul class="item-card" *ngFor="let item of items.values()">
         <mat-card>
             <mat-card-header>
@@ -30,7 +42,7 @@
                 {{ item.description }}
             </mat-card-content>
             <mat-card-actions>
-                <button mat-button>Add to Cart</button>
+                <button mat-button (click)="addItem(item)">Add to Cart</button>
             </mat-card-actions>
         </mat-card>
     </ul>

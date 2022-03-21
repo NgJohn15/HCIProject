@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<div class="grid" (click)="emptyClick()">
+    <ul class="item-card" *ngFor="let item of cart_items">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ item.name }}</mat-card-title>
+                <mat-card-subtitle>
+                    {{ item.dept }}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                {{ item.description }}
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button (click)="removeItem(item)">Remove from Cart</button>
+            </mat-card-actions>
+        </mat-card>
+    </ul>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 
 @Component({
@@ -8,16 +9,70 @@ import { GlobalConstants } from 'src/global-constants';
 })
 export class SportsComponent implements OnInit {
 
-  items = GlobalConstants.items;
+  cart = GlobalConstants.cart_items;
   sports = new Map();
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    for (let entry of this.items.entries()) {
+    for (let entry of GlobalConstants.items.entries()) {
       if (entry[1].dept == "sports") {
         this.sports.set(entry[0], entry[1]);
       }
+    }
+  }
+
+  emptyClick() {
+    console.log("empty click");
+    if (GlobalConstants.test0_active) {
+      console.log("empty click");
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      console.log("empty click");
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test2_active) {
+      console.log("empty click");
+      GlobalConstants.test2_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      console.log("empty click");
+      GlobalConstants.test3_total_clicks += 1;
+    }
+  }
+
+  addItem(itemName: any) {
+    console.log("added " + itemName.name);
+
+    // click data
+    if (GlobalConstants.test0_active) {
+      GlobalConstants.test0_on_clicks += 1;
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      GlobalConstants.test1_on_clicks += 1;
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      GlobalConstants.test3_on_clicks += 1;
+      GlobalConstants.test3_total_clicks += 1;
+    }
+
+    // add item to shopping list
+    this.cart.push(itemName);
+
+    // test 1 complete condition
+    if (GlobalConstants.test1_active && itemName.name == "Volleyball")
+    {
+      console.log("TEST 1 Complete");
+      let dateTime = new Date();
+      GlobalConstants.test1_end = dateTime;
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test1_fin = true;
+
+      // Notify User
+      this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
     }
   }
 

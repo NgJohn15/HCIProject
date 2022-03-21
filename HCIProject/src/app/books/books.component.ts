@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fadeInItems } from '@angular/material/menu';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GlobalConstants } from 'src/global-constants';
 
 @Component({
@@ -9,10 +10,11 @@ import { GlobalConstants } from 'src/global-constants';
 })
 export class BooksComponent implements OnInit {
 
+  cart = GlobalConstants.cart_items;
   items = GlobalConstants.items;
   books = new Map();
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     for (let item of this.items.entries()) {
@@ -20,5 +22,67 @@ export class BooksComponent implements OnInit {
         this.books.set(item[0], item[1]);
       }
     }
+  }
+  
+  emptyClick() {
+    console.log("empty click");
+    if (GlobalConstants.test0_active) {
+      console.log("empty click");
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      console.log("empty click");
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test2_active) {
+      console.log("empty click");
+      GlobalConstants.test2_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      console.log("empty click");
+      GlobalConstants.test3_total_clicks += 1;
+    }
+  }
+
+  addItem(itemName: any) {
+    console.log("added" + itemName.name);
+    console.log(itemName);
+    // add item to shopping list
+    this.cart.push(itemName);
+
+    // Test3 Condition
+    if (this.containsAllItems()) {
+      console.log("Completed Test 3");
+      let dateTime = new Date();
+      GlobalConstants.test3_active = false;
+      GlobalConstants.test3_end = dateTime;
+      GlobalConstants.test3_fin = true;
+
+      this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
+    }
+  }
+
+  containsAllItems() {
+    let baseballReq = false;
+    let compMouseReq = false;
+    let hatReq = false;
+    let CBReq = false;
+
+    for (let item of GlobalConstants.cart_items) {
+      if (item.name == "Baseball") {
+        baseballReq = true;
+      }
+      if (item.name == "Computer Mouse") {
+        compMouseReq = true;
+      }
+      if (item.name == "hat") {
+        hatReq = true;
+      }
+      if (item.name == "Children's Story Book") {
+        CBReq = true;
+      }
+    }
+
+    return baseballReq && compMouseReq && hatReq && CBReq;
   }
 }

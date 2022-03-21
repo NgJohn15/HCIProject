@@ -11,14 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
 import { RouterModule } from '@angular/router';
-import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
-import { SportsComponent } from './sports/sports.component';
-import { ElectronicsComponent } from './electronics/electronics.component';
-import { ClothesComponent } from './clothes/clothes.component';
-import { BooksComponent } from './books/books.component';
+
 import { ExportToCSV } from "@molteni/export-csv";
 import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.component';
 import { DynamicGridComponent } from './dynamic-grid/dynamic-grid.component';
@@ -26,15 +20,12 @@ import { StoreItemModalComponent } from './store-item-modal/store-item-modal.com
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DynamicCartComponent } from './dynamic-cart/dynamic-cart.component'
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    SportsComponent,
-    ElectronicsComponent,
-    ClothesComponent,
-    BooksComponent,
     DynamicToolbarComponent,
     DynamicGridComponent,
     StoreItemModalComponent,
@@ -51,16 +42,18 @@ import { DynamicCartComponent } from './dynamic-cart/dynamic-cart.component'
     MatDialogModule,
     MatSlideToggleModule,
     
+    MatSnackBarModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent},
-      { path: 'cart', component: CartComponent},
-      { path: 'sports', component:  SportsComponent},
-      { path: 'electronics', component:  ElectronicsComponent},
-      { path: 'clothes', component:  ClothesComponent},
-      { path: 'books', component: BooksComponent}
+      { path: '', component: AppComponent},
+      { path: 'cart', component: AppComponent},
+      { path: 'sports', component:  AppComponent},
+      { path: 'electronics', component:  AppComponent},
+      { path: 'clothes', component:  AppComponent},
+      { path: 'books', component: AppComponent}
     ])
   ],
   providers: [],
