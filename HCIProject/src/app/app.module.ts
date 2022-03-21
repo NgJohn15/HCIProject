@@ -19,7 +19,8 @@ import { SportsComponent } from './sports/sports.component';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { ClothesComponent } from './clothes/clothes.component';
 import { BooksComponent } from './books/books.component';
-import { ExportToCSV } from "@molteni/export-csv"; 
+import { ExportToCSV } from "@molteni/export-csv";
+import { DynamicToolbarComponent } from './dynamic-toolbar/dynamic-toolbar.component'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ExportToCSV } from "@molteni/export-csv";
     SportsComponent,
     ElectronicsComponent,
     ClothesComponent,
-    BooksComponent
+    BooksComponent,
+    DynamicToolbarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+<div style="width: 100%">
+    <button *ngFor="let button of buttons" #toolbarButton mat-stroked-button routerLink="{{button.routerLink}}" [style.width.px]="getButtonWidth(toolbarButton)">
+        {{button.text}}
+    </button>
+</div>
