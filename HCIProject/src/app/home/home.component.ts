@@ -60,13 +60,13 @@ export class HomeComponent implements OnInit {
 
     // add volleyball item to cart if one doesn't already exist
     let temp = true;
-    for (let item of GlobalConstants.cart_items) {
+    for (let item of GlobalConstants.cartItems) {
       if (item.name == "Volleyball") {
         temp = false;
       }
     }
     if (temp) {
-      GlobalConstants.cart_items.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
+      GlobalConstants.cartItems.push({name: "Volleyball", dept: "sports", description: "Standard issue volleyball for all ages."});
     }
     
     const dialogRef = this.dialog.open(Test2Diaglog);
