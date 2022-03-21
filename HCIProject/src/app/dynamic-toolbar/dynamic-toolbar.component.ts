@@ -19,8 +19,8 @@ export class DynamicToolbarComponent implements OnInit
     {routerLink: "books", text: "Books"}
   ]
   mousePositionX: number = 0;
-  buttonMinWidth: number = 100;
-  buttonMaxWidth: number = 200;
+  buttonMinWidth: number = 300;
+  buttonMaxWidth: number = 500;
 
   constructor() { }
 
@@ -37,7 +37,7 @@ export class DynamicToolbarComponent implements OnInit
     if (this.enableDynamic)
     {
       let distance = Math.abs(this.mousePositionX - (button._elementRef.nativeElement.offsetLeft + button._elementRef.nativeElement.offsetWidth / 2));
-      let size = this.lerp(this.buttonMinWidth, this.buttonMaxWidth, Math.max(0, 1 - distance / 200));
+      let size = this.lerp(this.buttonMinWidth, this.buttonMaxWidth, Math.max(0, 1 - distance / 800));
       return size;
     }
     return this.buttonMinWidth;
