@@ -37,16 +37,19 @@ export class DynamicCartComponent
     // test2 condition
     if (GlobalConstants.test2_active && item.name == "Volleyball") {
       GlobalConstants.test2_removed = true;
-      // let dateTime = new Date();
-      // console.log("Completed Test 2");
-      // GlobalConstants.test2_active = false;
-      // GlobalConstants.test2_end = dateTime;
-      // GlobalConstants.test2_fin = true;
+      GlobalConstants.test2_on_clicks += 1;
+      GlobalConstants.test2_total_clicks += 1;
+    }
 
-      // GlobalConstants.test2_on_clicks += 1;
-      // GlobalConstants.test2_total_clicks += 1;
-
-      // this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
+    // Handle active tests misclicks
+    if (GlobalConstants.test0_active) {
+      GlobalConstants.test0_total_clicks += 1;
+    }
+    if (GlobalConstants.test1_active) {
+      GlobalConstants.test1_total_clicks += 1;
+    }
+    if (GlobalConstants.test3_active) {
+      GlobalConstants.test3_total_clicks += 1;
     }
   }
 

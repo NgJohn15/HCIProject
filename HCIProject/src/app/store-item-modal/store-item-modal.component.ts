@@ -20,29 +20,29 @@ export class StoreItemModalComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  containsAllItems() {
-    let baseballReq = false;
-    let compMouseReq = false;
-    let hatReq = false;
-    let CBReq = false;
+  // containsAllItems() {
+  //   let baseballReq = false;
+  //   let compMouseReq = false;
+  //   let hatReq = false;
+  //   let CBReq = false;
 
-    for (let item of GlobalConstants.cartItems) {
-      if (item.name == "Baseball") {
-        baseballReq = true;
-      }
-      if (item.name == "Computer Mouse") {
-        compMouseReq = true;
-      }
-      if (item.name == "hat") {
-        hatReq = true;
-      }
-      if (item.name == "Children's Story Book") {
-        CBReq = true;
-      }
-    }
+  //   for (let item of GlobalConstants.cartItems) {
+  //     if (item.name == "Baseball") {
+  //       baseballReq = true;
+  //     }
+  //     if (item.name == "Computer Mouse") {
+  //       compMouseReq = true;
+  //     }
+  //     if (item.name == "hat") {
+  //       hatReq = true;
+  //     }
+  //     if (item.name == "Children's Story Book") {
+  //       CBReq = true;
+  //     }
+  //   }
 
-    return baseballReq && compMouseReq && hatReq && CBReq;
-  }
+  //   return baseballReq && compMouseReq && hatReq && CBReq;
+  // }
 
   addToCart(): void
   {
@@ -54,18 +54,9 @@ export class StoreItemModalComponent implements OnInit {
     {
       GlobalConstants.test1_added = true;
 
-      // console.log("TEST 1 Complete");
-      // let dateTime = new Date();
-      // GlobalConstants.test1_end = dateTime;
-      // GlobalConstants.test1_active = false;
-      // GlobalConstants.test1_fin = true;
-
-      // // update click count
-      // GlobalConstants.test1_on_clicks += 1;
-      // GlobalConstants.test1_total_clicks += 1;
-
-      // // Notify User
-      // this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
+      // update click count
+      GlobalConstants.test1_on_clicks += 1;
+      GlobalConstants.test1_total_clicks += 1;
     }
 
     // Test2 Condition
@@ -77,31 +68,25 @@ export class StoreItemModalComponent implements OnInit {
     if (GlobalConstants.test3_active) {
       if (this.data.name == "Baseball") {
         GlobalConstants.test3_baseball = true;
+        GlobalConstants.test3_on_clicks += 1;
+        GlobalConstants.test3_total_clicks += 1;
       }
       if (this.data.name == "Computer Mouse") {
         GlobalConstants.test3_computermouse = true;
+        GlobalConstants.test3_on_clicks += 1;
+        GlobalConstants.test3_total_clicks += 1;
       }
       if (this.data.name == "hat") {
         GlobalConstants.test3_hat = true;
+        GlobalConstants.test3_on_clicks += 1;
+        GlobalConstants.test3_total_clicks += 1;
       }
       if (this.data.name == "Children's Story Book") {
         GlobalConstants.test3_children = true;
+        GlobalConstants.test3_on_clicks += 1;
+        GlobalConstants.test3_total_clicks += 1;
       }
     }
-
-    // if (this.containsAllItems()) {
-    //   console.log("Completed Test 3");
-    //   let dateTime = new Date();
-    //   GlobalConstants.test3_active = false;
-    //   GlobalConstants.test3_end = dateTime;
-    //   GlobalConstants.test3_fin = true;
-
-    //   this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
-    // }
-    // else if (GlobalConstants.test3_active && (this.data.name == "Baseball" || this.data.name == "hat" || this.data.name == "Computer Mouse" || this.data.name == "Children's Story Book")) {
-    //   GlobalConstants.test3_on_clicks += 1;
-    //   GlobalConstants.test3_total_clicks += 1;
-    // }
 
     this.dialogRef.close();
   }
