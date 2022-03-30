@@ -38,6 +38,23 @@ export class AppComponent
     return GlobalConstants.test3_fin;
   }
 
+  getActiveTest0() {
+    return GlobalConstants.test0_active;
+  }
+  getActiveTest1() {
+    return GlobalConstants.test1_active;
+  }
+  getActiveTest2() {
+    return GlobalConstants.test2_active;
+  }
+  getActiveTest3() {
+    return GlobalConstants.test3_active;
+  }
+
+  getActiveTest() {
+    return GlobalConstants.test0_active || GlobalConstants.test1_active || GlobalConstants.test2_active || GlobalConstants.test3_active;
+  }
+
   test0() {
     GlobalConstants.test0_cart = true;
     if (GlobalConstants.test0_active) {
@@ -51,7 +68,8 @@ export class AppComponent
     }
   }
 
-  test0_finish() {
+  home_clicked() {
+    // Test 0 Completion
     if (GlobalConstants.test0_cart && GlobalConstants.test0_active) {
       let dateTime = new Date();
       GlobalConstants.test0_end = dateTime;
@@ -61,6 +79,51 @@ export class AppComponent
       GlobalConstants.test0_on_clicks += 1;
       GlobalConstants.test0_total_clicks += 1;
       this.snackBar.open("Test 0 Complete", "Dismiss", { duration: 1500});
+    }
+
+    // Test 1 Completion
+    if (GlobalConstants.test1_active && GlobalConstants.test1_added)
+    {
+      console.log("TEST 1 Complete");
+      let dateTime = new Date();
+      GlobalConstants.test1_end = dateTime;
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test1_fin = true;
+
+      // update click count
+      GlobalConstants.test1_on_clicks += 1;
+      GlobalConstants.test1_total_clicks += 1;
+
+      // Notify User
+      this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
+    }
+
+    // Test 2 Completion
+    if (GlobalConstants.test2_active && GlobalConstants.test2_removed) {
+      let dateTime = new Date();
+      console.log("Completed Test 2");
+      GlobalConstants.test2_active = false;
+      GlobalConstants.test2_end = dateTime;
+      GlobalConstants.test2_fin = true;
+
+      GlobalConstants.test2_on_clicks += 1;
+      GlobalConstants.test2_total_clicks += 1;
+
+      this.snackBar.open("Test 2 Complete", "Dismiss", { duration: 1500});
+    }
+
+    // Test 3 Completion
+    if (GlobalConstants.test3_active && GlobalConstants.test3_baseball && GlobalConstants.test3_computermouse && GlobalConstants.test3_hat && GlobalConstants.test3_children) {
+        console.log("Completed Test 3");
+        let dateTime = new Date();
+        GlobalConstants.test3_active = false;
+        GlobalConstants.test3_end = dateTime;
+        GlobalConstants.test3_fin = true;
+      
+        GlobalConstants.test3_on_clicks += 1;
+        GlobalConstants.test3_total_clicks += 1;
+
+        this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
     }
   }
 
@@ -72,6 +135,11 @@ export class AppComponent
       console.log('Begining test 0: ' + dateTime);
       GlobalConstants.test0_active = true;
       GlobalConstants.test0_start = dateTime;
+
+      // stop all other active tracks
+      GlobalConstants.test1_active = false;
+      GlobalConstants.test2_active = false;
+      GlobalConstants.test3_active = false;
     });
   }
 

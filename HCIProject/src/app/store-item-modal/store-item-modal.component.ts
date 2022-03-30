@@ -52,38 +52,56 @@ export class StoreItemModalComponent implements OnInit {
     // test 1 complete condition
     if (GlobalConstants.test1_active && this.data.name == "Volleyball")
     {
-      console.log("TEST 1 Complete");
-      let dateTime = new Date();
-      GlobalConstants.test1_end = dateTime;
-      GlobalConstants.test1_active = false;
-      GlobalConstants.test1_fin = true;
+      GlobalConstants.test1_added = true;
 
-      // update click count
-      GlobalConstants.test1_on_clicks += 1;
-      GlobalConstants.test1_total_clicks += 1;
+      // console.log("TEST 1 Complete");
+      // let dateTime = new Date();
+      // GlobalConstants.test1_end = dateTime;
+      // GlobalConstants.test1_active = false;
+      // GlobalConstants.test1_fin = true;
 
-      // Notify User
-      this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
+      // // update click count
+      // GlobalConstants.test1_on_clicks += 1;
+      // GlobalConstants.test1_total_clicks += 1;
+
+      // // Notify User
+      // this.snackBar.open("Test 1 Complete", "Dismiss", { duration: 1500});
     }
 
     // Test2 Condition
     if (GlobalConstants.test2_active) {
+      GlobalConstants.test2_on_clicks += 1;
       GlobalConstants.test2_total_clicks += 1;
     }
     // Test3 Condition
-    if (this.containsAllItems()) {
-      console.log("Completed Test 3");
-      let dateTime = new Date();
-      GlobalConstants.test3_active = false;
-      GlobalConstants.test3_end = dateTime;
-      GlobalConstants.test3_fin = true;
+    if (GlobalConstants.test3_active) {
+      if (this.data.name == "Baseball") {
+        GlobalConstants.test3_baseball = true;
+      }
+      if (this.data.name == "Computer Mouse") {
+        GlobalConstants.test3_computermouse = true;
+      }
+      if (this.data.name == "hat") {
+        GlobalConstants.test3_hat = true;
+      }
+      if (this.data.name == "Children's Story Book") {
+        GlobalConstants.test3_children = true;
+      }
+    }
 
-      this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
-    }
-    else if (GlobalConstants.test3_active && (this.data.name == "Baseball" || this.data.name == "hat" || this.data.name == "Computer Mouse" || this.data.name == "Children's Story Book")) {
-      GlobalConstants.test3_on_clicks += 1;
-      GlobalConstants.test3_total_clicks += 1;
-    }
+    // if (this.containsAllItems()) {
+    //   console.log("Completed Test 3");
+    //   let dateTime = new Date();
+    //   GlobalConstants.test3_active = false;
+    //   GlobalConstants.test3_end = dateTime;
+    //   GlobalConstants.test3_fin = true;
+
+    //   this.snackBar.open("Test 3 Complete", "Dismiss", { duration: 1500});
+    // }
+    // else if (GlobalConstants.test3_active && (this.data.name == "Baseball" || this.data.name == "hat" || this.data.name == "Computer Mouse" || this.data.name == "Children's Story Book")) {
+    //   GlobalConstants.test3_on_clicks += 1;
+    //   GlobalConstants.test3_total_clicks += 1;
+    // }
 
     this.dialogRef.close();
   }

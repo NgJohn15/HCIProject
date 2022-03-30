@@ -7,6 +7,22 @@ export interface StoreItem
 
 export class GlobalConstants 
 {
+
+    // Test 0 variables    
+    public static test0_cart: boolean = false; // is True when user has opened the shopping cart
+
+    // Test 1 variables
+    public static test1_added: boolean = false; // is True when the user has added a volleyball to the cart
+
+    // Test 2 variables
+    public static test2_removed: boolean = false; // is True when the user has removed a volleyball from the cart
+
+    // Test 3 variables
+    public static test3_baseball: boolean = false; // is True when the user has added a baseball to the cart
+    public static test3_computermouse: boolean = false; // is True when the user has added a computer mouse to the cart
+    public static test3_hat: boolean = false; // is True when the user has added a hat to the cart
+    public static test3_children: boolean = false; // is True when the user has added a children's book to the cart
+    
     public static test0_start: Date;
     public static test1_start: Date;
     public static test2_start: Date;
@@ -26,8 +42,6 @@ export class GlobalConstants
     public static test1_active: boolean = false;
     public static test2_active: boolean = false;
     public static test3_active: boolean = false;
-
-    public static test0_cart: boolean = false;
 
     public static test0_total_clicks: number = 0;
     public static test1_total_clicks: number = 0;

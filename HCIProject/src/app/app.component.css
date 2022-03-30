@@ -10,3 +10,21 @@
 .header {
     flex: 1 1 auto;
 }
+
+.main {
+    float: left;
+    width: 90%;
+}
+
+.todolist {
+    float: left;
+    width: 9%;
+    justify-content: center;
+}
+  
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
