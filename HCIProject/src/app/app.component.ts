@@ -203,7 +203,6 @@ export class AppComponent
   }
 
   toggleDynamic(isDynamic: boolean) {
-    console.log(!isDynamic);
     GlobalConstants.isDynamic = !isDynamic;
   }
 
